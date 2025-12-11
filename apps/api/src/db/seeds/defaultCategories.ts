@@ -1,5 +1,5 @@
 import { sql } from "bun";
-import { insertCategory } from "$types/category";
+import { insertCategory } from "@/types/category";
 
 const seedCategory = async () => {
   const defaultCategories: insertCategory[] =
@@ -15,6 +15,5 @@ const seedCategory = async () => {
 
   await sql`INSERT INTO categories ${sql(defaultCategories)}`;
 }
-
 
 await seedCategory();

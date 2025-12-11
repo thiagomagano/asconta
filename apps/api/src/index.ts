@@ -1,9 +1,11 @@
-import { Hono } from 'hono'
+import app from "@/app";
 
-const app = new Hono()
+const port = process.env.PORT || 3000;
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+// eslint-disable-next-line no-console
+console.log(`API for asconta is running on port http://localhost:${port}`);
 
-export default app
+export default {
+  fetch: app.fetch,
+  port,
+}

@@ -5,9 +5,10 @@
     "jsxImportSource": "hono/jsx",
     "module": "ESNext",
     "target": "ES2024",
-    "baseUrl": ".",
+    "baseUrl": "./",
+    "moduleResolution": "Bundler",
     "paths": {
-          "$types/*": ["src/types/*"],
-        }
+      "@/*": ["./src/*"]
+    },
   }
 }
