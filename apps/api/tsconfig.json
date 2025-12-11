@@ -4,6 +4,10 @@
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
     "module": "ESNext",
-    "target": "ES2024"
+    "target": "ES2024",
+    "baseUrl": ".",
+    "paths": {
+          "$types/*": ["src/types/*"],
+        }
   }
 }

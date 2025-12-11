@@ -1,5 +1,5 @@
 import { sql } from "bun";
-import type {insertCategory} from "../types/types"
+import { insertCategory } from "$types/category";
 
 const seedCategory = async () => {
   const defaultCategories: insertCategory[] =
@@ -10,20 +10,11 @@ const seedCategory = async () => {
       { type: "expense", name: "Saúde", color: "#2ecc71", icon: "health" },
       { type: "income", name: "Salário", color: "#27ae60", icon: "money" },
       { type: "income", name: "Freelance", color: "#16a085", icon: "work" },
+      { type: "income", name: "Vale", color: "#87a085", icon: "food" },
     ];
 
-  for (let category of defaultCategories) {
-    await sql`
-      INSERT INTO categories (name, type, color, icon, is_default)
-              VALUES (
-                ${category.name},
-                ${category.type},
-                ${category.color},
-                ${category.icon},
-                TRUE
-              )
-            `;
-  }
+  await sql`INSERT INTO categories ${sql(defaultCategories)}`;
 }
+
 
 await seedCategory();
