@@ -1,4 +1,4 @@
-interface Account {
+export interface Account {
   id: string,
   title: string,
   type: string,
@@ -12,7 +12,7 @@ interface Account {
   updatedAt: string,
 }
 
-interface transaction{
+export interface transaction{
   id: string,
   accountId: string,
   categoryId: string,
@@ -26,7 +26,7 @@ interface transaction{
 
 }
 
-interface category {
+export interface category {
   id: string,
   name: string,
   type: "income"| "expense",
@@ -34,4 +34,12 @@ interface category {
   icon?: string,
   isDefault: boolean,
   createdAt: string
+}
+
+export interface insertCategory {
+  name: string,
+  type: "income"| "expense",
+  color?: string,
+  icon?: string,
+  isDefault?: boolean,
 }
