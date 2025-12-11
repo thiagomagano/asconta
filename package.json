@@ -1,0 +1,7 @@
+{
+  "name": "asconta-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ]
+}
