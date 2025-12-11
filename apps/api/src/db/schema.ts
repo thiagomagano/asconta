@@ -1,6 +1,6 @@
 import { sql } from "bun";
 
-const accountMigration = await sql`
+const accountSchema = await sql`
   CREATE TABLE IF NOT EXISTS accounts (
       id SERIAL PRIMARY KEY,
       title TEXT NOT NULL,
@@ -15,7 +15,7 @@ const accountMigration = await sql`
   );
   `;
 
-const categoryMigration = await sql`
+const categorySchema = await sql`
   CREATE TABLE IF NOT EXISTS categories (
       id SERIAL PRIMARY KEY,
       name TEXT NOT NULL,
@@ -27,7 +27,7 @@ const categoryMigration = await sql`
   );
   `;
 
-const transactionMigration = await sql`
+const transactionSchema = await sql`
   CREATE TABLE IF NOT EXISTS transactions (
       id SERIAL PRIMARY KEY,
 
